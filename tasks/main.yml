@@ -4,3 +4,6 @@
   apt:
     update_cache: yes
     cache_valid_time: 3600
+    force_apt_get: yes
+  environment:
+    APT_FORCE_IPV4: "true"
