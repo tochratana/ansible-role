@@ -1,7 +1,5 @@
 ---
 # tasks file for my_nginx
-- name: Install nginx
-  apt:
-    name: nginx
-    state: present
-    update_cache: yes
+- name: Update APT cache
+      apt:
+        update_cache: yes
