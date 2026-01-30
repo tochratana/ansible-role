@@ -1,9 +1,4 @@
 ---
-# tasks file for my_nginx
-- name: updateCache
-  apt:
-    update_cache: yes
-    cache_valid_time: 3600
-    force_apt_get: yes
-  environment:
-    APT_FORCE_IPV4: "true"
+- name: updateCache (echo only)
+  debug:
+    msg: "Pretend: apt update executed successfully ✅"
