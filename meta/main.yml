@@ -36,7 +36,7 @@
 
 
 galaxy_info:
-  role_name: updateCache
+  role_name: echo-role
   author: tochratana
   description: update cache
   license: MIT

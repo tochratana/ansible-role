@@ -1,4 +1,9 @@
----
-- name: updateCache (echo only)
-  debug:
-    msg: "Pretend: apt update executed successfully ✅"
+
+- name: Echo localhost
+  ansible.builtin.shell: echo "This is localhost"
+  when: "'local' in group_names"
+
+- name: Echo server
+  ansible.builtin.shell: echo "This is server"
+  when: "'server' in group_names"
+
