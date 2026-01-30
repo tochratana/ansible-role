@@ -1,19 +1,10 @@
+# roles/echo-role/tasks/main.yml
 - name: Echo localhost
-  ansible.builtin.shell: echo "This is localhost"
-  register: result
-  when: "'local' in group_names"
-
-- name: Show localhost output
   ansible.builtin.debug:
-    var: result.stdout
+    msg: "This is localhost"
   when: "'local' in group_names"
 
 - name: Echo server
-  ansible.builtin.shell: echo "This is server"
-  register: result
-  when: "'server' in group_names"
-
-- name: Show server output
   ansible.builtin.debug:
-    var: result.stdout
+    msg: "This is server"
   when: "'server' in group_names"
