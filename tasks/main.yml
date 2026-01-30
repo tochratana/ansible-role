@@ -1,14 +1,14 @@
 # roles/echo-role/tasks/main.yml
 - name: Create folder on localhost
   ansible.builtin.file:
-    path: /client_testing
+    path: /tmp/local_test
     state: directory
     mode: '0755'
   when: "'local' in group_names"
 
 - name: Create folder on server
   ansible.builtin.file:
-    path: /server_testing
+    path: /tmp/server_test
     state: directory
     mode: '0755'
   when: "'server' in group_names"
