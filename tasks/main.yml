@@ -1,5 +1,5 @@
 ---
 # tasks file for my_nginx
-- name: Update APT cache
+- name: updateCache
       apt:
         update_cache: yes
