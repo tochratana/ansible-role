@@ -6,11 +6,11 @@
 - name: Upgrade packages
   apt:
     upgrade: dist
-- name: Install NFS Server 
+- name: Install NFS Server
   apt: 
     name: nfs-kernel-server
     state: present 
-- name: Create Shared Directory 
+- name: Create Shared Directory
   file: 
     path: "{{ nfs_server.mount_path}}"
     state: directory 
@@ -18,7 +18,7 @@
     owner: "nobody"
     mode: "0777"
 
-- name: Configure the NFS Server exports 
+- name: Configure the NFS Server exports
   blockinfile: 
     path: /etc/exports
     block: |
@@ -29,7 +29,7 @@
     export_entries: >-
       {{ nfs_client.ips | map('regex_replace', '^(.*)$', '\g<1>(rw,sync,no_subtree_check,no_root_squash)') | join(' ') }}
 
-- name: Applying the configuration 
+- name: Applying the configuration
   command: exportfs -ra 
 - name: Restart the nfs server 
   systemd: 
