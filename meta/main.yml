@@ -36,15 +36,14 @@
 
 
 galaxy_info:
-  role_name: nginx
+  # role_name: nginx
   author: tochratana
-  description: Install nginx using Ansible
+  description: Anisble role for SETUP NFS and client 
   license: MIT
   min_ansible_version: "2.9"
   platforms:
     - name: Ubuntu
       versions:
-        - focal
         - jammy
 
 dependencies: []
